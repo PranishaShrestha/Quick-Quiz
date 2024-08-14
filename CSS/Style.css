@@ -1,0 +1,120 @@
+:root{
+    background-color: #ecf5ff;
+    font-size: 62.5%; 
+    /* The default font size of the browser is 16px so 62.5% font-size means 10px */
+}
+
+/* Universal CSS */
+*{
+    box-sizing: border-box;
+    /* adding border to the box includes the width of the border*/
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0; 
+    /* padding and margin 0 means resizing and repositioning the the content */
+    color: #333;
+}
+
+/* defining the heading tags */
+h1,h2,h3,h4{
+    margin-bottom: 1rem;
+    /* 1 rem is equal to 16 px */
+}
+
+h1{
+    font-size: 5.4rem;
+    color: #ff1b9c;
+    margin-bottom: 4.5rem;
+}
+
+h1>span{
+    /* h1>span targets any span elements that is directly a child of a h1 element. */
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+h2{
+    font-size: 4.2rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+ h3{
+    font-size: 2.8rem;
+    font-weight: 500;
+ }
+
+ /* Defifning the Utilities */
+ .container{
+    width: 100vw;
+    /* "vw" stands for viewport width */
+    height: 100vh;
+    /* "vh" stands for viewport height */
+    justify-content: center;
+    /* centers the items horizontally within the container */
+    align-items: center;
+    /* centers the item vertically within the container */
+    max-width: 80rem;
+    /* defines the maximum width an element can grow to */
+    display: flex;
+    /* flex allows you to create a flexible and responsive layout. The flex items can be aligned, distributed and resized dynamically within the container. */
+ }
+
+ /*defining the child elements of the container */
+ .container>*{
+    width: 100%;
+ }
+
+ .flex-column{
+    display: flex;
+    flex-direction: column;
+    /* this property arrange the items in a vertical stack (one below another) */
+ }
+
+ .flex-center{
+    justify-content: center;
+    align-items: center;
+ }
+
+ .justify-center{
+    justify-content: center;
+ }
+
+ .text-center{
+    text-align: center;
+    /* specifies how the contents are aligned */
+ }
+
+ .hidden{
+    display: none;
+ }
+
+ /* defining buttons */
+.btn{
+    font-size: 1.8rem;
+    padding: 1.5rem;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #ff1b9c;
+    margin-bottom: 1.5rem;
+    text-decoration: none;
+    /* text decoration is used to control the decoratives line applied in the text. */
+    border-radius: 20px;
+    background-color: #ecedee
+}
+
+.btn:hover{
+    cursor: pointer;
+    /* changes the cursor to hand icon when hovering around the button */
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(210, 63, 144, 0.5);
+    /* applies the shadow around the button (makes the box semi-transparent) */
+    transform: translateY(-0.1rem);
+    /* moves the button slightly upward(-0.1rem) when hovered */
+    transition: transform 150ms;
+    /* smoothly animates the transform properties */
+}
+/* 
+.btn[disabled]:hover{
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+} */
