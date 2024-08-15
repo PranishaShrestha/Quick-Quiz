@@ -58,7 +58,7 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestion = [...questions];
-    console.log(availableQuestion);
+    // console.log(availableQuestion);
     getNewQuestion();
 };
 // startGame Function: Initializes the game, res8ets variables, and prepares the question pool. It then starts the game by calling getNewQuestion.
@@ -67,11 +67,11 @@ startGame = () => {
 
 getNewQuestion = () => {
     // The updated getNewQuestion function is designed to handle the selection of a new question and update the UI accordingly. It includes necessary checks, updates the question and choices, and handles the end of the quiz if there are no more questions available.
-    if(availableQuestion.length === 0 || questionCounter >= MAX_QUESTION){
+    if (availableQuestion.length === 0 || questionCounter >= MAX_QUESTION) {
         // go to the end page 
         return window.location.assign("/end.html");
     }
-    
+
     questionCounter++;
     const questionIndex = Math.floor(Math.random() * availableQuestion.length);
     // The line const questionIndex = Math.floor(Math.random() * availableQuestions.length); is a common technique used to select a random element from an array. It ensures that each question in the quiz is chosen randomly, providing a varied and engaging experience for the user.
@@ -91,18 +91,36 @@ getNewQuestion = () => {
     // acceptingAnswer = true; enables the user to select an answer. 
 };
 
-choices.forEach(choice =>{
-    choice.addEventListener("click", e =>{
+choices.forEach(choice => {
+    choice.addEventListener("click", e => {
         // Event Listener: The addEventListener method is used to handle click events on each choice element.
-        if(!acceptingAnswer) return;
+        if (!acceptingAnswer) return;
         //  The if (!acceptingAnswer) return; line prevents multiple selections by checking the acceptingAnswer flag.
-        acceptingAnswer = false ;
+        acceptingAnswer = false;
         // acceptingAnswer = false; prevents further input until the next question.
-        const selectedChoice =e.target;
+        const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
         // selectedChoice and selectedAnswer allow you to determine which choice was clicked and process it accordingly.
-        console.log(selectedAnswer);
-        getNewQuestion();
+
+        // const classToApply = 'incorrect';
+        // if (selectedAnswer == currentQuestion.answer){
+        //     classToApply = 'correct';
+        // }
+
+        // Assuming classToApply is determined based on whether the answer is correct or incorrect
+        const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+
+        // Add the class to the parent element to apply styling
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        // Optionally, remove the class after some time (e.g., 1 second) to reset the state
+        setTimeout(() => {
+            selectedChoice.parentElement.classList.remove(classToApply);
+            getNewQuestion(); // Load the next question
+        }, 1000);
+
+        // console.log(selectedAnswer == currentQuestion.answer)
+
     });
 });
 
