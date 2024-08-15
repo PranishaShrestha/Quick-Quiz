@@ -102,7 +102,7 @@ h2{
     background-color: #ecedee
 }
 
-.btn:hover{
+.btn:hover, .choice-container:hover {
     cursor: pointer;
     /* changes the cursor to hand icon when hovering around the button */
     box-shadow: 0 0.4rem 1.4rem 0 rgba(210, 63, 144, 0.5);
@@ -118,3 +118,23 @@ h2{
     box-shadow: none;
     transform: none;
 } */
+
+/* -----------CSS for game.html----------------- */
+.choice-container{
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb(244, 66, 143);
+    background-color: #ffff;
+}
+
+.choice-prefx{
+    padding: 1.5rem 2.5rem;
+    background-color: #ff1b9c;
+    color: #ffff;
+}
+
+ .choice-text{
+    padding: 1.5rem;
+ }
