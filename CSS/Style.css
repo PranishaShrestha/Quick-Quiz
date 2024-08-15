@@ -57,6 +57,7 @@ h2{
     /* defines the maximum width an element can grow to */
     display: flex;
     /* flex allows you to create a flexible and responsive layout. The flex items can be aligned, distributed and resized dynamically within the container. */
+    padding: 2rem;
  }
 
  /*defining the child elements of the container */
@@ -125,7 +126,7 @@ h2{
     margin-bottom: 0.5rem;
     width: 100%;
     font-size: 1.8rem;
-    border: 0.1rem solid rgb(244, 66, 143);
+    border: 0.1rem solid rgba(244, 66, 143, 0.218);
     background-color: #ffff;
 }
 
@@ -137,4 +138,5 @@ h2{
 
  .choice-text{
     padding: 1.5rem;
+    width: 100%;
  }
